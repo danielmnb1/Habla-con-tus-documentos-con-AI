@@ -9,6 +9,13 @@ poder habla con tus documentos con AI (api de OpenAi)
 
 ## Instalación de Requerimientos
 
+<h4>opcional: crear un entorno virtual</h4>
+
+```bash
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
 Para comenzar instala los paquetes necesarios ejecutando el siguiente comando en tu terminal:
 
 ```bash
