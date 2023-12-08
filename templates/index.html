@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asistente para tus Documentos AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        #result h2 {
+            margin-bottom: 10px;
+        }
+
+        #result ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #result li {
+            margin-bottom: 8px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Asistente para tus Documentos AI</h1>
+    <form method="POST">
+        <label for="pregunta">Escribe tu pregunta:</label><br>
+        <input type="text" id="pregunta" name="pregunta"><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <div id="result">
+        {% if pregunta %}
+            <h2>Tu pregunta:</h2>
+            <p>{{ pregunta }}</p>
+        {% endif %}
+
+        {% if respuestas %}
+            <h2>Respuestas:</h2>
+            <ul>
+                {% for respuesta in respuestas %}
+                    <li>{{ respuesta }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
