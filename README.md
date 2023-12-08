@@ -26,7 +26,11 @@ pip install -r requirements.txt
 
 ya sea creando un archivo 
 <br>
-.env
+<h5>.env</h5>
+
+```bash
+OPENAI_API_KEY="sk-uxxxxxxxxx"
+```
 <br>
 o
 <br>
