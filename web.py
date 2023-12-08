@@ -15,13 +15,7 @@ def index():
 
         # Código para enviar la pregunta al asistente de OpenAI y obtener la respuesta
         cliente = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-        asistente = cliente.beta.assistants.create(
-            name="prueba",
-            instructions="Usted es mi asistente que puede responder a las preguntas de los documentos dados",
-            tools=[{"type": "retrieval"}],
-            model="gpt-3.5-turbo-1106",
-            file_ids=['file-jd7P7NWfF6pP5bWjyK3uBCyq', 'file-6g0NSi3Ih1N3Kh1lCkWdym7f']
-        )
+        asistente = my_assistant = cliente.beta.assistants.retrieve("asst_xxxxxx")
         hilo = cliente.beta.threads.create()
         mensaje = cliente.beta.threads.messages.create(
             thread_id=hilo.id,
